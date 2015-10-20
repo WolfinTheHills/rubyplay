@@ -8,9 +8,11 @@ Rails.application.routes.draw do
   get 'carts/show'
 
   get 'products/index'
+  get 'products/new'
   resources :products, only: [:index]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+  resources :charges 
   root to: "products#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
